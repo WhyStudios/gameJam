@@ -1,18 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject pauseMenu;
+    public GameObject gameOverMenu;
+
+    public bool isPaused { get => paused; }
+
+    private bool paused;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
+    public void SetPauseMenu()
+    {
+        paused = !paused;
+
+        Time.timeScale = (paused) ? 0f : 1f;
+        pauseMenu.SetActive(paused);
+    }
+
+    public void SetGameOverMenu()
+    {
+        Time.timeScale = 0f;
+        gameOverMenu.SetActive(true);
+    }
+
+    public void LoadScene(int scene)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene);
+    }
+
 }

@@ -9,16 +9,18 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
 
     private Vector3 rotation;
+    private MenuManager menuManager;
 
     void Start()
     {
         Physics.gravity = new Vector3(0f, gravity);
+        menuManager = FindObjectOfType<MenuManager>();
     }
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isGrounded) SetGravity();
-
+        if (Input.GetMouseButtonDown(0) && isGrounded && !menuManager.isPaused) SetGravity();
+        
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed * Time.deltaTime);
     }
 
@@ -32,9 +34,7 @@ public class Player : MonoBehaviour
 
     void Morreu()
     {
-        Time.timeScale = 0f;
-
-        Debug.Log("Morreu");
+        menuManager.SetGameOverMenu();
     }
 
     private void OnCollisionStay(Collision other)
