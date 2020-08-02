@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private int distance;
     private float gravity = -20f;
-    private float rotationSpeed = 6f;
+    private float rotationSpeed = 8f;
     private bool isGrounded = false;
     private bool died = false;
 
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     private Vector3 rotation;
     private MenuManager menuManager;
     private float timeToAddDistance;
-
+    private PlayerAudio audio;
     private Animator animator;
 
     void Start()
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         Physics.gravity = new Vector3(0f, gravity);
         menuManager = FindObjectOfType<MenuManager>();
         animator = GetComponentInChildren<Animator>();
+        audio = GetComponent<PlayerAudio>();
     }
     
     void Update()
@@ -52,6 +53,8 @@ public class Player : MonoBehaviour
 
         rotation = (gravity > 0)? new Vector3(-180f, 0f, 0f) : Vector3.zero;
         Physics.gravity = new Vector3(0f, gravity);
+
+        audio.PlayJumpSound();
     }
 
     void Morreu()
@@ -62,6 +65,8 @@ public class Player : MonoBehaviour
         animator.Play("Morrendo");
         GameManager.StopGameplay();
         menuManager.SetGameOverMenu();
+
+        audio.PlayDeathSound();
     }
 
     private void OnCollisionStay(Collision other)
