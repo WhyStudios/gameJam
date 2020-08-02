@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Transform checkGround;
+    public LayerMask groundLayer;
+
+    public float radius;
+    public Transform checkDeathStart;
+    public Transform checkDeathEnd;
+    public LayerMask enemyLayer;
+
     private int distance;
     private float gravity = -20f;
     private float rotationSpeed = 6f;
@@ -30,13 +38,11 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isGrounded && !died) SetGravity();
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed * Time.deltaTime);
 
+        isGrounded = Physics.CheckSphere(checkGround.position, 0.1f, groundLayer);
+        if (Physics.CheckCapsule(checkDeathStart.position, checkDeathEnd.position, radius, enemyLayer) && !died) Morreu();
+
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetBool("Died", died);
-    }
-
-    void CheckGround()
-    {
-
     }
 
     void SetGravity()
@@ -59,7 +65,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.collider.CompareTag("Ground")) isGrounded = true;
+        //if (other.collider.CompareTag("Ground")) isGrounded = true;
         if (other.collider.GetComponent<Obstacle>() && !died) Morreu();
     }
 
@@ -68,10 +74,17 @@ public class Player : MonoBehaviour
         if (other.collider.GetComponent<Obstacle>()) Morreu(); 
     }
 
-    private void OnCollisionExit(Collision other)
+    //private void OnCollisionExit(Collision other)
+    //{
+    //    if (other.collider.CompareTag("Ground")) isGrounded = false;
+    //}
+
+    private void OnDrawGizmosSelected()
     {
-        if (other.collider.CompareTag("Ground")) isGrounded = false;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(checkGround.position, 0.1f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(checkDeathStart.position, radius);
+        Gizmos.DrawWireSphere(checkDeathEnd.position, radius);
     }
-
-
 }

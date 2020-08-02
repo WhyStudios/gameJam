@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5425327601039781337}
   - component: {fileID: 7485947993747392778}
   - component: {fileID: 469231252335816308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Inimigo_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

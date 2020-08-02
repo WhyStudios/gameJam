@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7408700618846526451}
   - component: {fileID: 4698392115225341753}
   - component: {fileID: 5691800072706561643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chao
   m_TagString: Ground
   m_Icon: {fileID: 0}
