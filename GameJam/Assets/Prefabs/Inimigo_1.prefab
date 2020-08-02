@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842499146043242793}
+  - component: {fileID: 5425327601039781337}
+  - component: {fileID: 7485947993747392778}
+  - component: {fileID: 469231252335816308}
   m_Layer: 0
   m_Name: Inimigo_1
   m_TagString: Untagged
@@ -33,6 +36,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5425327601039781337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70641624552203155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.16, z: 0.09}
+  m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!114 &7485947993747392778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70641624552203155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653049d04de84fd42a7effc6f86faf44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &469231252335816308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70641624552203155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080b00a195302ad4a9e3e72fd524944e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitKill: 1
 --- !u!1 &423809372340796305
 GameObject:
   m_ObjectHideFlags: 0

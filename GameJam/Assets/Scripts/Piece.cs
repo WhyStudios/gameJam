@@ -26,6 +26,7 @@ public class Piece : MonoBehaviour
     void SpawnTile()
     {
         Vector3 spawnPosition = new Vector3(transform.position.x + 14f, 0f, 0f);
+        Debug.Log(tiles.Length);
         int tileNumber = Random.Range(0, tiles.Length);
 
         Instantiate(tiles[tileNumber], spawnPosition, Quaternion.identity);

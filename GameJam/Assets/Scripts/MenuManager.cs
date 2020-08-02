@@ -13,10 +13,10 @@ public class MenuManager : MonoBehaviour
 
     private bool paused;
     
-    public bool IsMouseOverUI()
-    {
-        return EventSystem.current.IsPointerOverGameObject();
-    }
+    //public bool IsMouseOverUI()
+    //{
+    //    return EventSystem.current.IsPointerOverGameObject();
+    //}
 
     public void SetPauseMenu()
     {

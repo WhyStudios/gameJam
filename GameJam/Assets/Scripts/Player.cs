@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isGrounded && !menuManager.IsMouseOverUI()) SetGravity();
+        if (Input.GetMouseButtonDown(0) && isGrounded) SetGravity();
         
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed * Time.deltaTime);
     }
