@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private int distance;
     private float gravity = -20f;
     private float rotationSpeed = 6f;
     private bool isGrounded = false;
+    private bool died = false;
+
+    public bool isDead { get => died; }
 
     private Vector3 rotation;
     private MenuManager menuManager;
+    private float timeToAddDistance;
 
     void Start()
     {
@@ -19,7 +24,7 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isGrounded) SetGravity();
+        if (Input.GetMouseButtonDown(0) && isGrounded && !died) SetGravity();
         
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed * Time.deltaTime);
     }
@@ -28,12 +33,17 @@ public class Player : MonoBehaviour
     {
         gravity *= -1;
 
+        float impulseForce = GameManager.impulseForce;
+        GetComponent<Rigidbody>().AddForce(new Vector3(0f, impulseForce * Mathf.Sign(gravity), 0f));
+
         rotation = (gravity > 0)? new Vector3(-180f, 0f, 0f) : Vector3.zero;
         Physics.gravity = new Vector3(0f, gravity);
     }
 
     void Morreu()
     {
+        died = true;
+        GameManager.StopGameplay();
         menuManager.SetGameOverMenu();
     }
 

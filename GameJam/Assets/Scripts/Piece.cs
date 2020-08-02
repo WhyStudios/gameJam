@@ -6,7 +6,7 @@ public class Piece : MonoBehaviour
 {
     private GameObject[] tiles;
 
-    private float speed = 5f;
+    //private float speed = 5f;
     private bool spawned;
 
     void Start()
@@ -16,7 +16,7 @@ public class Piece : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+        transform.Translate(-GameManager.scenarySpeed * Time.deltaTime, 0f, 0f);
 
         if (!spawned && transform.position.x < 10f) SpawnTile();
 
