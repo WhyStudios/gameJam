@@ -16,17 +16,27 @@ public class Player : MonoBehaviour
     private MenuManager menuManager;
     private float timeToAddDistance;
 
+    private Animator animator;
+
     void Start()
     {
         Physics.gravity = new Vector3(0f, gravity);
         menuManager = FindObjectOfType<MenuManager>();
+        animator = GetComponentInChildren<Animator>();
     }
     
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && isGrounded && !died) SetGravity();
-        
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed * Time.deltaTime);
+
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("Died", died);
+    }
+
+    void CheckGround()
+    {
+
     }
 
     void SetGravity()
@@ -50,6 +60,7 @@ public class Player : MonoBehaviour
     private void OnCollisionStay(Collision other)
     {
         if (other.collider.CompareTag("Ground")) isGrounded = true;
+        if (other.collider.GetComponent<Obstacle>() && !died) Morreu();
     }
 
     private void OnCollisionEnter(Collision other)
