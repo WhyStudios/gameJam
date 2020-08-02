@@ -1091,6 +1091,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: idle
       objectReference: {fileID: 0}
+    - target: {fileID: 4418834999246775707, guid: 74fc0b33c93739e498bbb72899bd43b6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47e4b17bba4fcb64fa0f5320c4abbbdd, type: 2}
     - target: {fileID: 5866666021909216657, guid: 74fc0b33c93739e498bbb72899bd43b6,
         type: 3}
       propertyPath: m_Controller
@@ -2230,7 +2235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796944201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.225, y: -1.88, z: 0}
+  m_LocalPosition: {x: -9.51, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 939716405}

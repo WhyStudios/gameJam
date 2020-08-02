@@ -41,14 +41,12 @@ public class Player : MonoBehaviour
         isGrounded = Physics.CheckSphere(checkGround.position, 0.1f, groundLayer);
         if (Physics.CheckCapsule(checkDeathStart.position, checkDeathEnd.position, radius, enemyLayer) && !died) Morreu();
 
-        animator.SetBool("IsGrounded", isGrounded);
-        animator.SetBool("Died", died);
+        if(!died) animator.SetBool("IsGrounded", isGrounded);
     }
 
     void SetGravity()
     {
         gravity *= -1;
-
         float impulseForce = GameManager.impulseForce;
         GetComponent<Rigidbody>().AddForce(new Vector3(0f, impulseForce * Mathf.Sign(gravity), 0f));
 
@@ -59,6 +57,7 @@ public class Player : MonoBehaviour
     void Morreu()
     {
         died = true;
+        animator.Play("Morrendo");
         GameManager.StopGameplay();
         menuManager.SetGameOverMenu();
     }
