@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
     void Morreu()
     {
         died = true;
+        Vector3 impulseForce = (gravity < 0)? new Vector3(-100f, 100f, 0f) : new Vector3(-200f, -200f, 0f);
+        GetComponent<Rigidbody>().AddForce(impulseForce);
         animator.Play("Morrendo");
         GameManager.StopGameplay();
         menuManager.SetGameOverMenu();
