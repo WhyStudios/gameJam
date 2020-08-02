@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,15 +12,10 @@ public class MenuManager : MonoBehaviour
     public bool isPaused { get => paused; }
 
     private bool paused;
-
-    void Start()
-    {
-        
-    }
     
-    void Update()
+    public bool IsMouseOverUI()
     {
-        
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     public void SetPauseMenu()
