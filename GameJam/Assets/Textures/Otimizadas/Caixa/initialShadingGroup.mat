@@ -21,27 +21,27 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 86e056fc6accff44b8903fbc20cc612b, type: 3}
+        m_Texture: {fileID: 2800000, guid: f4ddece7158522644893ec5521f9527f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 4343af0d8b04d1744abc7f629fcbfa8b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0fb38d242756c1f45b70946ce2b23663, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 7e20edefab2261a41b20bcd066d3abc3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 208b0c6441ebf9349acdf0cab472353d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 86e056fc6accff44b8903fbc20cc612b, type: 3}
+        m_Texture: {fileID: 2800000, guid: f4ddece7158522644893ec5521f9527f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 20494b31d5ad22a43b9d16cb42eb2e2c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 775745d1733ad4f41b1e1f2d8f5d3756, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 61ce6a9ef56a3d84dbe99ef65c26b28d, type: 3}
+        m_Texture: {fileID: 2800000, guid: efa4e6f18b667884891380fda0f29cff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -71,11 +71,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.740566, b: 0.740566, a: 1}
+    - _BaseColor: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 15.999998, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 10.680627, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &4977901895697391136
+--- !u!114 &2507961056946030579
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
